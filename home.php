@@ -1,8 +1,8 @@
 <?php
-use didinka\Greeting;
+use didinka\DbConnection;
 
 require "vendor/autoload.php";
 
 
-$graetingNew = new Greeting();
-echo $graetingNew->run();
+$graetingNew =  new DbConnection;
+$graetingNew->testConnection();
