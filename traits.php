@@ -1,21 +1,25 @@
 <?php
-class Base {
-    public function sayHello() {
-        echo 'Hello ';
+trait Human
+{
+    function sayHello() {
+        echo "Hello";
     }
 }
 
-trait SayWorld {
-    public function sayHello() {
-        parent::sayHello();
-        echo 'World!';
+trait person
+{
+    function sayName() {
+        echo "peter ";
     }
 }
 
-class MyHelloWorld extends Base {
-    use SayWorld;
+class Greeting
+{
+    use Human, person;
 }
 
-$o = new MyHelloWorld();
-$o->sayHello();
+$world = new Greeting();
+echo $world->sayHello() . "<br/> " . $world->sayName(); //Hello peter
 ?>
+<h1>Traits in PHP</h1>
+
